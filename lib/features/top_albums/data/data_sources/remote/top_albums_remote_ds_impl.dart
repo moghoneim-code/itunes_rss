@@ -38,8 +38,7 @@ class TopAlbumsRemoteDataSourceImpl implements TopAlbumsRemoteDataSource {
       }
 
       return decodeResponseList<AlbumEntry>(
-        entries,
-        (json) => AlbumEntry.fromJson(json))!;
+        entries, (json) => AlbumEntry.fromJson(json))!;
 
     } catch (e) {
       if (kDebugMode) {

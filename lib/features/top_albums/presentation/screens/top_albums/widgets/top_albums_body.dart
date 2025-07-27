@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:itunes_rss/core/shared/enums/view_state.dart';
 import 'package:itunes_rss/features/top_albums/presentation/providers/top_albums_provider.dart';
-import 'package:itunes_rss/features/top_albums/presentation/widgets/top_albums_screen_widgets/top_albums_appBar.dart';
-import 'package:itunes_rss/features/top_albums/presentation/widgets/top_albums_screen_widgets/top_albums_error_widget.dart';
-import 'package:itunes_rss/features/top_albums/presentation/widgets/top_albums_screen_widgets/top_albums_list.dart';
+import 'package:itunes_rss/features/top_albums/presentation/screens/top_albums/widgets/top_albums_appBar.dart';
+import 'package:itunes_rss/features/top_albums/presentation/screens/top_albums/widgets/top_albums_error_widget.dart';
+import 'package:itunes_rss/features/top_albums/presentation/screens/top_albums/widgets/top_albums_list.dart';
 import 'package:provider/provider.dart';
-import '../../../../../core/shared/widgets/app_state_widgets/shimmer_list.dart';
+import '../../../../../../core/shared/widgets/app_state_widgets/shimmer_list.dart';
+
 
 class TopAlbumsBody extends StatefulWidget {
   const TopAlbumsBody({super.key});
@@ -22,7 +23,7 @@ class _TopAlbumsBodyState extends State<TopAlbumsBody> {
 
     controller.addListener(() {
       final provider = context.read<TopAlbumsProvider>();
-      final threshold = 300.0;
+      final threshold = 200.0;
       final position = controller.position;
 
       if (position.pixels >= position.maxScrollExtent - threshold &&

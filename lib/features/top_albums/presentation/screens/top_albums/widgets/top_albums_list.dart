@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:itunes_rss/core/shared/enums/view_state.dart';
 import 'package:itunes_rss/features/top_albums/data/models/album_model.dart';
 import 'package:itunes_rss/features/top_albums/presentation/providers/top_albums_provider.dart';
-import 'package:itunes_rss/features/top_albums/presentation/screens/top_albums_details_screen.dart';
-import 'package:itunes_rss/features/top_albums/presentation/widgets/top_albums_screen_widgets/album_card.dart';
+import 'package:itunes_rss/features/top_albums/presentation/screens/abum_details/album_details_screen.dart';
+import 'package:itunes_rss/features/top_albums/presentation/screens/top_albums/widgets/top_album_card.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../../core/shared/widgets/app_state_widgets/shimmer_listile.dart';
+import '../../../../../../core/shared/widgets/app_state_widgets/shimmer_listile.dart';
 
 class TopAlbumsList extends StatefulWidget {
   final List<AlbumEntry> albums;
@@ -42,7 +42,7 @@ class _TopAlbumsListState extends State<TopAlbumsList> {
                 MaterialPageRoute(
                   builder:
                       (context) =>
-                          TopAlbumsDetailsScreen(album: widget.albums[index]),
+                          AlbumDetailsScreen(album: widget.albums[index]),
                 ),
               ),
         );

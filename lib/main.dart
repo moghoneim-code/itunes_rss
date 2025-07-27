@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:itunes_rss/core/init_app.dart';
 import 'package:itunes_rss/features/top_albums/presentation/providers/top_albums_provider.dart';
-import 'package:itunes_rss/features/top_albums/presentation/screens/top_albums_screen.dart';
+import 'package:itunes_rss/features/top_albums/presentation/screens/top_albums/top_albums_screen.dart';
 import 'package:provider/provider.dart';
 import 'config/theming/app_theme.dart';
 import 'features/top_albums/domain/helpers/injection_helper.dart';

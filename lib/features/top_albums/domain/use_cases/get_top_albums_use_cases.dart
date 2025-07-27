@@ -7,10 +7,20 @@ class GetTopAlbumsUseCase {
 
   GetTopAlbumsUseCase({required this.topAlbumsRepo});
 
+  Future<List<AlbumEntry>> call({required int albumsCount}) async {
+    if (albumsCount <= 0) {
+      debugPrint('⚠️ albumsCount must be positive. Defaulting to 10.');
+      albumsCount = 10;
+    }
 
-  Future<List<AlbumEntry>> call({required int albumsCount}) {
-    debugPrint('🏁 UseCase called with $albumsCount albums');
-    return topAlbumsRepo.fetchTopAlbums(albumsCount: albumsCount);
+    try {
+      debugPrint('🏁 UseCase: Fetching $albumsCount albums...');
+      final albums = await topAlbumsRepo.fetchTopAlbums(albumsCount: albumsCount);
+      debugPrint('✅ UseCase: Retrieved ${albums.length} albums');
+      return albums;
+    } catch (e) {
+      debugPrint('❌ UseCase Error: $e');
+      rethrow;
+    }
   }
-
 }

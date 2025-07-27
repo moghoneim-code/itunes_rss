@@ -24,7 +24,8 @@ class TopAlbumsProvider extends ChangeNotifier {
   Object error = '';
   final int pageSize = 10;
   int currentPage = 1;
-  int totalAvailable = 60;
+  /// >>>>  you can change this value to simulate more data. <<<<<
+  int totalAvailable = 70;
 
   bool get hasMoreData => albums.length < totalAvailable;
 

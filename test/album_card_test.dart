@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:itunes_rss/features/top_albums/data/models/album_model.dart';
-import 'package:itunes_rss/features/top_albums/presentation/widgets/top_albums_screen_widgets/album_card.dart';
+import 'package:itunes_rss/features/top_albums/presentation/screens/top_albums/widgets/top_album_card.dart';
 
 /// Fake CachedNetworkImageWidget because http requests is blocked you know :(
 class FakeCachedNetworkImageWidget extends StatelessWidget {
