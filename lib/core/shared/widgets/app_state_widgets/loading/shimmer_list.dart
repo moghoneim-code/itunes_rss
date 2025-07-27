@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:itunes_rss/core/shared/widgets/app_state_widgets/shimmer_listile.dart';
+import 'package:itunes_rss/core/shared/widgets/app_state_widgets/loading/shimmer_listile.dart';
 
 class ShimmerList extends StatelessWidget {
   final int itemCount;

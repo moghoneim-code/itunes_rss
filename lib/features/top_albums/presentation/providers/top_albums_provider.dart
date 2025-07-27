@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:itunes_rss/core/shared/enums/view_state.dart';
-
 import '../../data/models/album_model.dart';
 import '../../domain/use_cases/get_top_albums_use_cases.dart';
 
+
 class TopAlbumsProvider extends ChangeNotifier {
   final GetTopAlbumsUseCase getTopAlbumsUseCase;
+
 
   TopAlbumsProvider({required this.getTopAlbumsUseCase}) {
     debugPrint('🔧 Initializing TopAlbumsProvider...');
@@ -24,7 +25,7 @@ class TopAlbumsProvider extends ChangeNotifier {
   Object error = '';
   final int pageSize = 10;
   int currentPage = 1;
-  /// >>>>  you can change this value to simulate more data. <<<<<
+  /// >>>>  you can change this value to fetch more albums. <<<<<
   int totalAvailable = 70;
 
   bool get hasMoreData => albums.length < totalAvailable;

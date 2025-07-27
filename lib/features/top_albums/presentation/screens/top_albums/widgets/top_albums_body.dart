@@ -5,7 +5,7 @@ import 'package:itunes_rss/features/top_albums/presentation/screens/top_albums/w
 import 'package:itunes_rss/features/top_albums/presentation/screens/top_albums/widgets/top_albums_error_widget.dart';
 import 'package:itunes_rss/features/top_albums/presentation/screens/top_albums/widgets/top_albums_list.dart';
 import 'package:provider/provider.dart';
-import '../../../../../../core/shared/widgets/app_state_widgets/shimmer_list.dart';
+import '../../../../../../core/shared/widgets/app_state_widgets/loading/shimmer_list.dart';
 
 
 class TopAlbumsBody extends StatefulWidget {

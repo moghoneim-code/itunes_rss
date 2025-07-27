@@ -6,7 +6,8 @@ import 'package:itunes_rss/features/top_albums/presentation/screens/abum_details
 import 'package:itunes_rss/features/top_albums/presentation/screens/top_albums/widgets/top_album_card.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../../../core/shared/widgets/app_state_widgets/shimmer_listile.dart';
+import '../../../../../../core/shared/widgets/app_state_widgets/loading/shimmer_listile.dart';
+
 
 class TopAlbumsList extends StatefulWidget {
   final List<AlbumEntry> albums;

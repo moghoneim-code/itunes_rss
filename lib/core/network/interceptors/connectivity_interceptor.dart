@@ -14,6 +14,7 @@ class ConnectivityInterceptor extends Interceptor {
       handler.reject(
         DioException(
           requestOptions: options,
+          type: DioExceptionType.connectionError,
           error: NoInternetError()
         ),
       );

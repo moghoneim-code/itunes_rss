@@ -49,7 +49,7 @@ void main() {
   testWidgets('AlbumCard displays album data and handles tap',
           (WidgetTester tester) async {
         bool tapped = false;
-        final String mockData = await rootBundle.loadString('assets/mock_album_feed.json');
+        final String mockData = await rootBundle.loadString('assets/mock_data/mock_album_feed.json');
         final data = json.decode(mockData);
         final dummyAlbum = AlbumEntry.fromJson(data['feed']['entry'][0]);
         await tester.pumpWidget(

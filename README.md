@@ -45,8 +45,8 @@ flutter test
 
 - `lib/` – Main app code
 - `features/` – Feature modules (e.g. Top Albums)
-- `core/` – Shared utilities, themes, enums, widgets
-- `assets/` – Contains mock data like `mock_album_feed.json`
+- `core/` – Shared utilities, enums, widgets , configurations ..etc .
+- `assets/` – Contains assets  (e.g. mock data like `mock_album_feed.json)`
 
 ## 🛠 Dependencies
 
@@ -56,10 +56,11 @@ This project uses:
 - [Dio](https://pub.dev/packages/dio)
 - [Cached Network Image](https://pub.dev/packages/cached_network_image)
 - [Shimmer](https://pub.dev/packages/shimmer)
+- [Flutter Test](https://pub.dev/packages/flutter_test) for testing
+- [mockito](https://pub.dev/packages/mocktail) for mocking in tests
 
-## 📄 License
 
-MIT
+
 
 ---
 
