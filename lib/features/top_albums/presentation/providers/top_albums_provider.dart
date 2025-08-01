@@ -25,6 +25,7 @@ class TopAlbumsProvider extends ChangeNotifier {
   Object error = '';
   final int pageSize = 10;
   int currentPage = 1;
+  /// Total number of albums available in the API.
   /// >>>>  you can change this value to fetch more albums. <<<<<
   int totalAvailable = 70;
 
@@ -68,7 +69,6 @@ class TopAlbumsProvider extends ChangeNotifier {
       final newEntries = newAlbums.skip(albums.length).toList();
 
       albums.addAll(newEntries);
-
       currentPage = nextPage;
       fetchMoreViewState = ViewState.loaded;
       debugPrint('📦 More albums loaded: ${newEntries.length}, Total: ${albums.length}');

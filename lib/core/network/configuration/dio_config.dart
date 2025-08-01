@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import '../errors/dio_exceptions.dart';
 import '../interceptors/connectivity_interceptor.dart';
 import '../network_const/network_constants.dart';
 
@@ -18,5 +19,19 @@ Dio baseDioClient() {
   }
 
   dio.interceptors.add(ConnectivityInterceptor());
+
+  dio.interceptors.add(
+    InterceptorsWrapper(
+      onError: (DioException error, ErrorInterceptorHandler handler) {
+        final customError = DioExceptions.fromDioError(error);
+        return handler.reject(DioException(
+          requestOptions: error.requestOptions,
+          error: customError.message,
+          type: error.type,
+          response: error.response,
+        ));
+      },
+    ),
+  );
   return dio;
 }

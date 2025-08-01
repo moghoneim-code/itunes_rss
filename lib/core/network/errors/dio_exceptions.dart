@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 
 class DioExceptions implements Exception {
+
   DioExceptions.fromDioError(DioException dioError) {
     if (dioError is FormatException) {
       message = dioError.toString();
