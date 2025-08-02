@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:itunes_rss/features/top_albums/data/data_sources/local/cached_albums_db.dart';
 import 'package:itunes_rss/features/top_albums/data/models/album_model.dart';
 import 'package:itunes_rss/features/top_albums/presentation/providers/top_albums_provider.dart';
 import 'package:itunes_rss/features/top_albums/presentation/screens/abum_details/widgets/album_details_appBar.dart';
