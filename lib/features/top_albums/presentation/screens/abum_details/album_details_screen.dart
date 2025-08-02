@@ -24,9 +24,6 @@ class _AlbumDetailsScreenState extends State<AlbumDetailsScreen> {
     return Consumer<TopAlbumsProvider>(
       builder: (context, provider, child) {
         return Scaffold(
-          floatingActionButton: FloatingActionButton(onPressed: (){
-          CachedFavoriteAlbumsDatabase.instance.printDatabase();
-          }) ,
           appBar: albumDetailsAppBar(
             context: context,
             album: widget.album,
