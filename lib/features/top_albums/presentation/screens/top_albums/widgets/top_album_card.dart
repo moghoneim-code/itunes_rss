@@ -21,7 +21,7 @@ class AlbumCard extends StatelessWidget {
   }
 
   Widget _buildCachedImage() => Hero(
-    tag: album.id.label,
+   tag: album.id.label,
     transitionOnUserGestures: true,
     child: CachedNetworkImageWidget(
       height: 75,

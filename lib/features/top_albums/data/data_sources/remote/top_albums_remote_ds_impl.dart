@@ -9,6 +9,7 @@ import '../../../../../core/network/network_const/network_constants.dart';
 import '../../models/album_model.dart';
 
 class TopAlbumsRemoteDataSourceImpl implements TopAlbumsRemoteDataSource {
+
   final Dio dio;
 
   TopAlbumsRemoteDataSourceImpl({required this.dio});

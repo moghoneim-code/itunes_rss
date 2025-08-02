@@ -24,7 +24,8 @@ Dio baseDioClient() {
     InterceptorsWrapper(
       onError: (DioException error, ErrorInterceptorHandler handler) {
         final customError = DioExceptions.fromDioError(error);
-        return handler.reject(DioException(
+        return handler.reject(
+            DioException(
           requestOptions: error.requestOptions,
           error: customError.message,
           type: error.type,

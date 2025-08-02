@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:itunes_rss/core/shared/enums/view_state.dart';
 import 'package:itunes_rss/features/top_albums/presentation/providers/top_albums_provider.dart';
@@ -39,19 +41,24 @@ class _TopAlbumsBodyState extends State<TopAlbumsBody> {
   Widget build(BuildContext context) {
     return Consumer<TopAlbumsProvider>(
       builder: (context, provider, child) {
-        return CustomScrollView(
-          controller: provider.scrollController,
-          slivers: [
-            topAlbumsAppBar(context),
-            switch (provider.viewState) {
-              ViewState.initial => _buildSliverCenteredText(
-                'Welcome to Top Albums',
-              ),
-              ViewState.loading => ShimmerList(itemCount: 10,),
-              ViewState.loaded => TopAlbumsList(albums: provider.albums),
-              ViewState.error => TopAlbumsErrorWidget(),
-            },
-          ],
+        return RefreshIndicator(
+
+          onRefresh: () async =>
+            provider.getTopAlbumsFromNetwork(),
+          child: CustomScrollView(
+            controller: provider.scrollController,
+            slivers: [
+              topAlbumsAppBar(context),
+              switch (provider.viewState) {
+                ViewState.initial => _buildSliverCenteredText(
+                  'Welcome to Top Albums',
+                ),
+                ViewState.loading => ShimmerList(itemCount: 10,),
+                ViewState.loaded => TopAlbumsList(albums: provider.albums),
+                ViewState.error => TopAlbumsErrorWidget(),
+              },
+            ],
+          ),
         );
       },
     );

@@ -2,6 +2,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:itunes_rss/core/shared/widgets/image_widgets/cached_network_image_widget.dart';
 import 'package:itunes_rss/features/top_albums/data/models/album_model.dart';
+import 'package:itunes_rss/features/top_albums/presentation/providers/top_albums_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AlbumDetailsBody extends StatelessWidget {
